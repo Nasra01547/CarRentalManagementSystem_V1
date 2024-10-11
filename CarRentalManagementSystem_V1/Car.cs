@@ -27,6 +27,12 @@ namespace CarRentalManagementSystem_V1
             return $"ID: {carId}, Brand: {brand}, Model: {model}, RentalPrice: {rentalPrice}";
         }
 
+        public virtual string DisplayCarInfo()
+        {
+            return $"ID: {carId}, Brand: {brand}, Model: {model}, RentalPrice: {rentalPrice}";
+
+        }
+
 
     }
 }
