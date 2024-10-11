@@ -27,7 +27,28 @@
                 switch(option)
                 {
                     case "1":
-
+                        Console.Clear();
+                        Createcar(carManager);
+                        break;
+                        case "2":
+                        Console.Clear();
+                        carManager.ReadCars();
+                        break;
+                        case "3":
+                        Console.Clear();
+                        Updatecar(carManager);
+                        break;
+                        case "4":
+                        Console.Clear();
+                        DeleteCar(carManager);
+                        break;
+                        case "5":
+                        Console.Clear();
+                        exit = true;
+                        break;
+                    default:
+                        Console.WriteLine("invalid option");
+                        break;
                     
                 }
 
@@ -36,6 +57,42 @@
                     Console.WriteLine("\nPress enter to continue");
                     Console.ReadLine();
                 }
+            }
+
+            static void Createcar(CarManager carManager)
+            {
+                Console.WriteLine("Enter car id");
+                string id = Console.ReadLine();
+                Console.WriteLine("Enter car brand");
+                string brand = Console.ReadLine();
+                Console.WriteLine("Enter car model");
+                string model = Console.ReadLine();
+                Console.WriteLine("Enter rental price");
+                decimal price = decimal.Parse(Console.ReadLine());
+
+                carManager.CreateCar(id, brand, model, price);
+            }
+            static void Updatecar(CarManager carManager)
+            {
+                Console.WriteLine("Enter car id to update");
+                string id = Console.ReadLine();
+                Console.WriteLine("Enter new brand");
+                string brand = Console.ReadLine();
+                Console.WriteLine("Enter new model");
+                string model = Console.ReadLine();
+                Console.WriteLine("Enter new rental price");
+                decimal price = decimal.Parse(Console.ReadLine());
+
+                carManager.UpdateCar(id, brand, model, price);
+            }
+
+            static void DeleteCar(CarManager carManager)
+            {
+                Console.WriteLine("Enter car id");
+                string id = Console.ReadLine();
+               
+
+                carManager.DeleteCar(id);
             }
         }
     }
