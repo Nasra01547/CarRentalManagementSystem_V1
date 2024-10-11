@@ -71,6 +71,22 @@ namespace CarRentalManagementSystem_V1
             }
         }
 
+        public decimal ValidateCarRentalPrice()
+        {
+            decimal price;
 
+            while(true)
+            {
+                Console.WriteLine("Enter rental price");
+                if(decimal.TryParse(Console.ReadLine(), out price)&& price > 0)
+                {
+                    return price;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid price... enter positive value");
+                }
+            }
+        }
     }
 }

@@ -67,8 +67,9 @@
                 string brand = Console.ReadLine();
                 Console.WriteLine("Enter car model");
                 string model = Console.ReadLine();
-                Console.WriteLine("Enter rental price");
-                decimal price = decimal.Parse(Console.ReadLine());
+                //Console.WriteLine("Enter rental price");
+                //decimal price = decimal.Parse(Console.ReadLine());
+                decimal price = carManager.ValidateCarRentalPrice();
 
                 carManager.CreateCar(id, brand, model, price);
             }
@@ -80,8 +81,10 @@
                 string brand = Console.ReadLine();
                 Console.WriteLine("Enter new model");
                 string model = Console.ReadLine();
-                Console.WriteLine("Enter new rental price");
-                decimal price = decimal.Parse(Console.ReadLine());
+                //Console.WriteLine("Enter new rental price");
+                //decimal price = decimal.Parse(Console.ReadLine());
+                decimal price = carManager.ValidateCarRentalPrice();
+
 
                 carManager.UpdateCar(id, brand, model, price);
             }
